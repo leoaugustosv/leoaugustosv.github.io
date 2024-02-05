@@ -1,6 +1,7 @@
 body {
     background-color: #131313;
     margin: 0px;
+    position: relative;
 }
 * {
     font-family: "Open Sans", sans-serif;
@@ -15,7 +16,7 @@ footer{
     width: 100%;
     padding: 1rem;
     color: azure;
-
+    bottom: 0;
 }
 
 footer .author{
