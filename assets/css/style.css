@@ -1,0 +1,57 @@
+body {
+    background-color: #131313;
+    margin: 0px;
+}
+* {
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Footer */
+footer{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem;
+    color: azure;
+}
+
+footer .author{
+    font-weight: bold;
+}
+
+
+/* Apresentação */
+
+.main{
+    color: azure;
+    margin: 1em;
+    max-width: 35%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.maintext{
+    text-align: justify;
+}
+
+.name{
+    color: #fffbc9;
+}
+
+
+/* Seção de utilidades */
+
+.utilities-container{
+    color: azure;
+    margin: 1em;
+    max-width: 35%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+}
