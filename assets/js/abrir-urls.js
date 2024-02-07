@@ -11,6 +11,11 @@ const defaultHTML =
         <div class="textarea-container form-group">
             <textarea name="urls" id="textareaLinks" class="form-control textarea" cols="80" rows="15"></textarea>
         </div>
+
+        <div class="check-container">
+            <input type="checkbox" id="transformHtml" class="check">
+            <label for="transformHtml" class="check">Transformar todos as linhas em links</label>
+        </div>
         
         <div class="btn-container">
         <button class="submitButton btns" onclick="validateUrls()"> <b>&nbsp;Validar URLs&nbsp;</b> </button>
@@ -30,6 +35,29 @@ function validateUrls(){
         const url = urlArray[i];
         let isLink = false;
         
+        const checkBox = document.getElementById('transformHtml');
+
+        if (checkBox.checked == true){
+            if ((url.startsWith('http://') == true) || (url.startsWith('https://') == true)) {
+                isLink = true;
+                finalUrlArray.push(url)
+                }
+
+            else{
+                isLink = false;
+                newUrl = `http://`+`${url}`
+                if (newUrl == `http://`){
+                }
+
+                else{
+                finalUrlArray.push(newUrl)
+                }
+            }
+        }
+
+
+
+        else{
 
         if ((url.startsWith('http://') == true) || (url.startsWith('https://') == true)) {
         isLink = true;
@@ -38,6 +66,7 @@ function validateUrls(){
         else{
         isLink = false;
         }
+    }
         
         console.log(`Linha ${linha}: ${url} - ${isLink}`)
     }

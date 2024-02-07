@@ -175,3 +175,23 @@ footer a:hover{
     color: #3a3a3a;
     transition: 0.3s;
 }
+
+.check-container{
+    margin-top: .75em;
+    margin-bottom: .25em;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center ;
+    transition: 0.25s;
+}
+
+.check-container:hover{
+transition: 0.5s;
+}
+
+[type=checkbox], [type=radio] {
+    height: 1em;
+    width: 1em;
+    margin-right: .5em;
+}
