@@ -30,95 +30,101 @@ let finalUrlArray = [];
 function validateUrls(){
     let urlArray = (document.getElementById("textareaLinks").value).split('\n');
     
-    for (let i = 0; i < urlArray.length; i++) {
-        const linha = i+1;
-        const url = urlArray[i];
-        let isLink = false;
-        
-        const checkBox = document.getElementById('transformHtml');
+    if (urlArray == ''){
+        alert('A caixa de texto está em branco. Por favor, insira pelo menos uma linha e tente novamente.')
+    }
 
-        if (checkBox.checked == true){
-            if ((url.startsWith('http://') == true) || (url.startsWith('https://') == true)) {
-                isLink = true;
-                finalUrlArray.push(url)
-                }
+    else{
 
-            else{
-                isLink = false;
-                newUrl = `http://`+`${url}`
-                if (newUrl == `http://`){
-                }
+        for (let i = 0; i < urlArray.length; i++) {
+            const linha = i+1;
+            const url = urlArray[i];
+            let isLink = false;
+            
+            const checkBox = document.getElementById('transformHtml');
+
+            if (checkBox.checked == true){
+                if ((url.startsWith('http://') == true) || (url.startsWith('https://') == true)) {
+                    isLink = true;
+                    finalUrlArray.push(url)
+                    }
 
                 else{
-                finalUrlArray.push(newUrl)
+                    isLink = false;
+                    newUrl = `http://`+`${url}`
+                    if (newUrl == `http://`){
+                    }
+
+                    else{
+                    finalUrlArray.push(newUrl)
+                    }
                 }
             }
+
+
+
+            else{
+
+            if ((url.startsWith('http://') == true) || (url.startsWith('https://') == true)) {
+            isLink = true;
+            finalUrlArray.push(url)
+            }
+            else{
+            isLink = false;
+            }
+        }
+            
+            console.log(`Linha ${linha}: ${url} - ${isLink}`)
         }
 
+        let tableHTML = ''
 
+        for (let i = 0; i < finalUrlArray.length; i++) {
+            
+            let URLtoTable = 
+            `
+            <tr>
+            <td width="80">${(i)+1})</td>
+            <td><a href="${finalUrlArray[i]}" target="_blank" title="${finalUrlArray[i]}">${finalUrlArray[i]}</a></td>
+            </tr>
+            `
 
-        else{
-
-        if ((url.startsWith('http://') == true) || (url.startsWith('https://') == true)) {
-        isLink = true;
-        finalUrlArray.push(url)
+            tableHTML = tableHTML.concat("\n",URLtoTable);
+            
         }
-        else{
-        isLink = false;
-        }
-    }
-        
-        console.log(`Linha ${linha}: ${url} - ${isLink}`)
-    }
 
-    let tableHTML = ''
-
-    for (let i = 0; i < finalUrlArray.length; i++) {
-        
-        let URLtoTable = 
+        linkInsertSection.innerHTML = 
         `
-        <tr>
-        <td width="80">${(i)+1})</td>
-        <td><a href="${finalUrlArray[i]}" target="_blank" title="${finalUrlArray[i]}">${finalUrlArray[i]}</a></td>
-        </tr>
+        <div class="box-container">
+                    <div class="title-container">
+                        <h1 span="pageTitle">Abrir Todas as URLs</h1>
+                        </div>
+                <span class="textareaTitle">
+                    URLs inseridas:
+                </span>
+                <br/>
+        
+                <div class="table-responsive">
+                    
+                <table class="table table-bordered">
+                
+                <tbody>
+                
+                ${tableHTML}
+                
+                </tbody>
+                
+                </table>
+            
+                </div>
+                
+                <div class="btn-container">
+                <button class="openButton btns" onclick="openUrls()"> <b>&nbsp;Abrir URLs&nbsp;(${finalUrlArray.length} abas) </b></button>
+                <button class="resetButton btns" onclick="resetLinks()"> &nbsp;Inserir outros links&nbsp; </button>
+                </div>
+                </div>
         `
-
-        tableHTML = tableHTML.concat("\n",URLtoTable);
-        
     }
-
-    linkInsertSection.innerHTML = 
-    `
-    <div class="box-container">
-                <div class="title-container">
-                    <h1 span="pageTitle">Abrir Todas as URLs</h1>
-                    </div>
-            <span class="textareaTitle">
-                URLs inseridas:
-            </span>
-            <br/>
-    
-            <div class="table-responsive">
-				
-            <table class="table table-bordered">
-            
-            <tbody>
-            
-            ${tableHTML}
-            
-            </tbody>
-            
-            </table>
-        
-            </div>
-            
-            <div class="btn-container">
-            <button class="openButton btns" onclick="openUrls()"> <b>&nbsp;Abrir URLs&nbsp;(${finalUrlArray.length} abas) </b></button>
-            <button class="resetButton btns" onclick="resetLinks()"> &nbsp;Inserir outros links&nbsp; </button>
-            </div>
-            </div>
-    `
-
 }
 
 function resetLinks(){
