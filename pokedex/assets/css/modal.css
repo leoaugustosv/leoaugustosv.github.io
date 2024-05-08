@@ -1,0 +1,277 @@
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  transition: 0.4s;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #eee4b1;
+  color: white;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  text-shadow: rgb(0, 0, 0) 1px 1px 3px;
+  background-image: url("./img/pokeball.png");
+  background-size: cover;
+  background-position: -17.5rem -11.5rem;
+  background-repeat: no-repeat;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  background: url(./img/backgrounds/Togepi.png);
+  background-repeat: no-repeat;
+  background-position-y: -7rem;
+  background-size: 50rem;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-image: url("./img/pokeball.png");
+  background-size: cover;
+  background-position: 17.5rem -11.5rem;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animateOpen;
+  animation-duration: 0.7s;
+  border-radius: 15px;
+  max-width: 50%;
+}
+
+@keyframes animateOpen {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.dexInfosBody {
+  text-transform: capitalize;
+  margin: auto;
+  text-shadow: rgb(0, 0, 0) 1px 2px 4px;
+  color: white;
+}
+
+.loadDiv .loadImgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.loadDiv img {
+  max-width: 100%;
+  width: 8rem;
+  height: 8rem;
+  margin: 1rem auto 0.5rem auto;
+}
+
+.loadingText {
+  text-align: center;
+}
+
+.pokeImgModal {
+  transform: scale(1.5);
+  margin: 1rem auto 2rem auto;
+  width: 25%;
+  z-index: 1;
+  transition: 0.1s;
+}
+
+.pokeImgModal:hover {
+  cursor: pointer;
+  filter: brightness(1.25);
+  transition: 0.3s;
+}
+
+.modalTitle {
+  text-shadow: rgb(0, 0, 0) 1px 1px 3px;
+}
+
+.ApiInfo {
+  text-align: justify;
+}
+
+.loadingText {
+  color: #000;
+  text-shadow: rgb(255, 255, 255) 1px 1px 4px;
+}
+
+.loadingTextDex {
+  color: #ffffff;
+  text-shadow: rgb(0, 0, 0) 1px 1px 4px;
+}
+
+.pokeArrows {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pokeArrowButton {
+  transition: 0.15s;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.pokeArrowButton:hover {
+  cursor: pointer;
+  filter: brightness(1.6);
+  transition: 0.3s;
+}
+
+.bounceOnce {
+  animation: bounce 1.15s ease alternate;
+}
+
+@keyframes bounce {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 10deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  75% {
+    rotate: -10deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+/* Backgrounds dos tipos */
+.Grass-bg {
+  background: url(./img/backgrounds/Grass.png);
+}
+
+.Fire-bg {
+  background: url(./img/backgrounds/Fire.png);
+}
+
+.Water-bg {
+  background: url(./img/backgrounds/Water.png);
+}
+
+.Bug-bg {
+  background: url(./img/backgrounds/Bug.png);
+}
+
+.Normal-bg {
+  background: url(./img/backgrounds/Normal.png);
+}
+
+.Electric-bg {
+  background: url(./img/backgrounds/Electric.png);
+}
+
+.Ice-bg {
+  background: url(./img/backgrounds/Ice.png);
+}
+.Ground-bg {
+  background: url(./img/backgrounds/Ground.png);
+}
+.Flying-bg {
+  background: url(./img/backgrounds/Flying.png);
+}
+.Poison-bg {
+  background: url(./img/backgrounds/Poison.png);
+}
+.Fighting-bg {
+  background: url(./img/backgrounds/Fighting.png);
+}
+.Psychic-bg {
+  background: url(./img/backgrounds/Psychic.png);
+}
+.Dark-bg {
+  background: url(./img/backgrounds/Dark.png);
+}
+.Rock-bg {
+  background: url(./img/backgrounds/Rock.png);
+}
+.Ghost-bg {
+  background: url(./img/backgrounds/Ghost.png);
+}
+.Steel-bg {
+  background: url(./img/backgrounds/Steel.png);
+}
+.Dragon-bg {
+  background: url(./img/backgrounds/Dragon.png);
+}
+.Fairy-bg {
+  background: url(./img/backgrounds/Fairy.png);
+}
+
+.Togepi-bg {
+  background: url(./img/backgrounds/Togepi.png);
+}
+
+.bg-properties {
+  background-repeat: no-repeat !important;
+  /* background-position-y: -7rem;
+  background-position-x: -1.5rem; */
+  background-size: 63em;
+  animation-name: bgAnimate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes bgAnimate {
+  0% {
+    background-position: center;
+  }
+
+  100% {
+    background-position-y: -5rem;
+    background-position-x: -1.5rem;
+  }
+}

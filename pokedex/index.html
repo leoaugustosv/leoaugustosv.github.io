@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeAPI (JS) - leoaugustosv</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+
+    <!-- @Importando Normalize CSS --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- @Importando Fonte Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pokedex.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+</head>
+<body>
+    <h1 class="mainTitle">Pokédex</h1>
+    <section class="pokedex">
+    <div class="content">
+
+        <ol id="listaPokemonsID" class="listaPokemons">
+            
+            <div class="loadDivDex">
+                <span class="loadImgContainer"><img class="Togepi" src="./assets/css/img/load/load1.gif" alt="Carregando..." onclick="playCrySpecial('https://pokemoncries.com/cries-old/175.mp3')"></span>
+                <p class="loadingTextDex" id="loadingText">Carregando...</p>
+                </div>
+            
+        </ol>
+
+        <div id="dexModal" class="modal">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Carregando...</h2>
+                </div>
+                <div class="modal-body bg-properties Togepi-bg" id="modalDexContent">
+                <div class="loadDiv">
+                <span class="loadImgContainer"><img class="Togepi" src="./assets/css/img/load/load1.gif" alt="Carregando..." onclick="playCry('https://pokemoncries.com/cries-old/175.mp3')"></span>
+                <p class="loadingText" id="loadingText">Carregando...</p>
+                </div>
+                </div>
+                
+                </div>
+              </div>
+        
+
+            </form>
+          </div>
+
+    </div>
+
+</section>
+
+<section class="regions">
+    <div><label for="regionList"> Filtrar por geração: </label>
+
+        <select name="regionSelect" class="regionlistDropdown" id="regionList" onchange="filterGen()">
+          <option value="0">Todas</option>
+          <option value="1">1ª Geração (Kanto)</option>
+          <option value="2">2ª Geração (Johto)</option>
+          <option value="3">3ª Geração (Hoenn)</option>
+          <option value="4">4ª Geração (Sinnoh)</option>
+          <option value="5">5ª Geração (Unova)</option>
+          <option value="6">6ª Geração (Kalos)</option>
+          <option value="7">7ª Geração (Alola)</option>
+          <option value="8">8ª Geração (Galar)</option>
+          <option value="9">9ª Geração (Paldea)</option>
+
+
+          <!-- adicionar demais opções de SELECT aqui -->
+        </select></div>
+        <input type="button" class="btnReset" id="resetFilters">
+        
+</section>
+
+
+    <section class="pageSection">
+    <div class="currentPage">
+        <div>Página <span id="pageNumber">1</span>&nbsp;-&nbsp;</div>
+        <div><label for="quantPokeList"> Exibir </label>
+
+            <select name="pokeQtd" class="pokelistDropdown" id="quantPokeList" onchange="showSelectedsize()">
+              <option value="10">10</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="1" id="hiddenQtd">1</option>
+            </select></div>
+        </div>
+
+    <div class="pagination">
+    <input type="button" class="pageButton" id="btnPrev" value="<">
+    <input type="button" class="pageButton" id="btnNext" value=">">
+    </div>
+</section>
+
+<!-- Importando arquivos JavaScript -->
+<script src="assets/js/pokeapi.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/pokemon-model.js"></script>
+
+</body>
+
+<footer>
+    Feito por&nbsp;<span class="author">leoaugustosv</span>&nbsp;- 2024 ©
+</footer>
+
+</html>
