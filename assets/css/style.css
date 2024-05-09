@@ -10,7 +10,7 @@ body {
 
 /* Footer */
 footer {
-  position: fixed;
+  position: relative;
   text-align: center;
   width: 100%;
   padding: 1rem;
@@ -30,6 +30,8 @@ a {
 footer a:hover {
   filter: brightness(1.25);
   -webkit-filter: brightness(1.25);
+  color: #3a3a3a;
+  transition: 0.5s;
 }
 
 /* Apresentação */
@@ -46,10 +48,13 @@ footer a:hover {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 
-.main img {
+.photo {
   width: 15em;
   border: #fffbc9 0.1em;
   border-style: solid;
@@ -62,7 +67,52 @@ footer a:hover {
   transform: scale(1.05);
 }
 
-.main .main h1 {
+.technologies-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.45em;
+  width: 100%;
+  margin-bottom: 1.25em;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.t-icon {
+  margin: 0.4em;
+  max-width: 11%;
+  width: 50px;
+  height: auto;
+  transition: 0.5s;
+}
+
+.t-icon:hover {
+  transform: scale(1.05);
+}
+
+.invert {
+  filter: invert();
+}
+
+.link-highlight {
+  color: rgb(76 76 255);
+  font-weight: bold;
+}
+
+.link-highlight:hover {
+  filter: brightness(1.25);
+  -webkit-filter: brightness(1.25);
+
+  transition: 0.5s;
+}
+
+.main h1 {
 }
 
 .maintext {
@@ -79,6 +129,14 @@ footer a:hover {
 }
 
 /* Seção de utilidades */
+
+.utilities {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  height: 4em;
+  margin-bottom: 3em;
+}
 
 .utilities-container {
   color: azure;
